@@ -1,0 +1,34 @@
+Departments
+-
+DepartmentID varchar(4) FK -< DepartmentEmployee.DepartmentID
+Name string INDEX
+
+DepartmentEmployee
+-
+EmployeeID int FK - Salaries.EmployeeID
+DepartmentID varchar(4)
+
+ManagerEmployee
+-
+EmployeeID int FK - Salaries.EmployeeID
+DepartmentID varchar(4) FK >- Departments.DepartmentID
+
+EmployeeInfo
+-
+EmployeeID int FK - Salaries.EmployeeID
+EmployeeTitleID varchar(10)
+BirthDate date
+FirstName varchar(30)
+LastName varchar(30)
+Sex varchar(1)
+HireDate date
+
+Salaries
+-
+EmployeeID int
+Salary int
+
+Titles
+-
+EmployeeTitleID varchar(10) FK -< EmployeeInfo.EmployeeTitleID
+Title varchar(25)
